@@ -32,8 +32,9 @@
     <script>
         coworkers.showAll = function(){
             for(var key in coworkers){
+                if(key != 'showAll'){
                 document.write(key+'<br>');
-                document.write(coworkers[key]+'<br>');
+                document.write(coworkers[key]+'<br>');}
             }
         }
         coworkers.showAll();
