@@ -11,11 +11,25 @@
  
     </article>
     <input type="button" value="fetch" onclick="
+    
       fetch('html').then(function(response){
         response.text().then(function(text){
           document.querySelector('article').innerHTML = text;
         })
-      })
+      }) 
+      //Asynchronous 응답하는 동안 1,2 출력하고 응답 끝나고 callbackme함수 호출함
+      /*function callbackme(){
+        console.log('response end');
+      }
+
+      callbackme = function(){
+        console.log('response end');
+      }
+
+
+      fetch('html').then(callbackme());
+      console.log(1);
+      console.log(2); */
     ">
 </body>
 </html>
