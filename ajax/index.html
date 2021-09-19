@@ -7,7 +7,7 @@
   <script src="colors.js"></script>
 </head>
 <body>
-  <h1><a href="#welcome">WEB</a></h1>
+  <h1><a href="#!welcome">WEB</a></h1>
   <input id="night_day" type="button" value="night" onclick="
     nightDayHandler(this);
   ">
@@ -27,16 +27,19 @@
         })
       });
     }
-    fetch('list').then(function(response){
-      response.text().then(function(text){
-        document.querySelector('#nav').innerHTML = text;
-      })
-    });
+
     if(location.hash){
       fetchPage(location.hash.substr(2));
     }else{
       fetchPage('welcome');
     }
+    
+    fetch('list').then(function(response){
+      response.text().then(function(text){
+        document.querySelector('#nav').innerHTML = text;
+      })
+    });
+
 
 
     
